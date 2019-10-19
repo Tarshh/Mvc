@@ -1,0 +1,58 @@
+﻿body {
+    margin: 0px;
+    padding: 0px;
+}
+
+.banner img {
+    width: 100%;
+}
+
+.nav nav-pills {
+    margin-right: 400px;
+}
+
+.bg-primary {
+    width: 400px;    
+}
+
+.homeContainer {
+    text-align: center;
+}
+
+.bikeImage {
+    width: 70%;
+    height: auto;
+}
+
+footer {
+    width: 100%;
+    margin-top: 60px;
+    background-color: #F8F8F8;
+}
+
+.col-xs-4 table-bordered button {
+    width: 200px;
+    margin-top: 25px;
+    display: table;
+}
+
+.container {
+    margin-top: 5%;
+}
+
+.btn-info {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.cart {
+    text-align: center;
+}
+
+.cart select {
+    margin-right: 2%;
+    width: 100px;
+}
+
+
+

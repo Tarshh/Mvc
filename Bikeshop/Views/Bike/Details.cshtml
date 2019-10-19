@@ -1,0 +1,22 @@
+﻿@model DetailPageModel
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<h2>@Model.Product.Name</h2>
+<h3>€ @Model.Product.Price</h3>
+
+<form asp-action="AddToShoppingBag" asp-controller="Bike" method="post">
+    @Html.HiddenFor(x => x.Product.Id)
+    <div class="thumbnail">
+        <img src="@Model.Product.Image" alt="@Model.Product.Name"/>
+        <div class="cart">
+            @Html.DropDownListFor(x => x.ShoppingItem.Quantity, Model.Quantities)
+
+            <button asp-for-model="Product" class="btn-success" value="Details"><span class="glyphicon glyphicon-shopping-cart"></span> Add to cart</button>
+        </div>
+    </div>
+</form>
+
+
+

@@ -1,0 +1,17 @@
+﻿@model IndexBikeViewModel
+    <div class="container col-md-12">
+        <div class="row">
+            @foreach (var bike in Model.Products)
+            {
+                <div class="col-md-3">
+                    <h3>@bike.Name, @bike.Id</h3>
+                    <h4> € @bike.Price </h4>
+                    <img class="bikeImage" src="@bike.Image"/>
+                    <a class="btn-link center-block" 
+                            asp-controller="Bike" 
+                            asp-action="Details" 
+                            asp-route-bikeId="@bike.Id">Buy</a>
+                </div>
+            }
+        </div>
+    </div>

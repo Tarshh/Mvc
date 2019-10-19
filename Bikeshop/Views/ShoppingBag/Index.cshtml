@@ -1,0 +1,26 @@
+﻿@model ShoppingBagViewModel
+@{
+    ViewData["Title"] = "ShoppingBag";
+}
+
+<h1 class="page-header">ShoppingBag</h1>
+@ViewBag.Empty
+@foreach (var item in Model.ShoppingItems)
+{
+    <div id="shoppingBagItem">
+        <img src="@item.Product.Image"/>
+        <h3>@item.Product.Name</h3>
+        <p>Quantity: @item.Quantity</p>
+        <p>Price: @(item.Product.Price * @item.Quantity)</p>
+    </div>
+    <style>
+
+        #shoppingBagItem img {
+            width: 200px;
+        }
+
+        #shoppingBagItem {
+            margin-top: 40px;
+        }
+    </style>
+}

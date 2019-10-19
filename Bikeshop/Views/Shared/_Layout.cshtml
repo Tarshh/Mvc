@@ -1,0 +1,54 @@
+﻿@using System.Net
+@using System.Net.Http
+@using Newtonsoft.Json
+@using Newtonsoft.Json.Linq
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/content/site.css"/>
+    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.css" type="text/css"/>
+    <title>@ViewBag.title</title>
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand">Bikeshop</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a asp-controller="Bike" asp-action="Index">Bikes</a></li>
+                <li><a asp-controller="ShoppingBag" asp-action="Index">Shopping Bag</a></li>
+                <partial name="_LoginPartial"/>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<div class="banner">
+    <img src="/images/banner.jpg"/>
+</div>
+<div class="container">
+    @RenderBody()
+</div>
+ @RenderSection("Scripts", required: false)
+<footer class="container-fluid text-center">
+    @*@{
+        var httpClient = new HttpClient();
+        var json = JObject.Parse(httpClient.GetStringAsync("http://quotes.rest/qod.json").Result);
+        var result = json.SelectToken("quote");
+    }*@
+    <h3>Best bikes you'll find here!</h3>
+</footer>
+</body>
+</html>
